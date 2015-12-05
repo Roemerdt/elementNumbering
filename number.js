@@ -1,3 +1,7 @@
+/* Adds incrementing numbers to every child of a certain type that is inside a parent of a certain type, and does this for every parent of that type.
+ * @params {String}, {String}
+ */
+
 function numbering(parentSelector, childSelector) {
 
 	parentSelectorType = parentSelector.charAt(0);
@@ -19,5 +23,4 @@ function numbering(parentSelector, childSelector) {
 	};
 }
 
-// Implementation
 numbering('section', 'div');
