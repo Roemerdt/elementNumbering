@@ -4,7 +4,7 @@
 
 function numbering(parentSelector, childSelector) {
 
-	// Get first character of string to identify selector type
+	// Get the first character of both strings to identify the selector type
 	parentSelectorType = parentSelector.charAt(0);
 	childrenSelectorType = childSelector.charAt(0);
 
@@ -13,7 +13,7 @@ function numbering(parentSelector, childSelector) {
 	if(parentSelectorType === '.') var parent = document.getElementsByClassName(parentSelector);
 	if(parentSelectorType === '#') var parent = document.getElementById(parentSelector);
 
-	// Loop through all parent with the given selector
+	// Loop through all parents that have the given selector
 	for (var i = 0; i < parent.length; i++) {
 
 		// Identify selector type for the child selector and find the child element(s)
@@ -21,7 +21,7 @@ function numbering(parentSelector, childSelector) {
 		if(childrenSelectorType === '.') var childrenElements = parent[i].getElementsByClassName(childSelector);
 		if(childrenSelectorType === '#') var childrenElements = parent[i].getElementById(childSelector);
 
-		// Loop through all found child element(s) and add a number in front of it
+		// Loop through all found child element(s) and add a number in front of what's already inside of it
 		for (var j = 0; j < childrenElements.length; j++) {
 			childrenElements[j].innerHTML = (j + 1 + ". ") + childrenElements[j].innerHTML;
 		};
